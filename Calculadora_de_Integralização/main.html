@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Integralização</title>
+    
+    <!-- Fonte Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS da Calculadora -->
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+
+    <div class="page-header">
+        <h1>Calculadora</h1>
+        <p>Simule sua integralização e veja como ela estará no próximo semestre</p>
+    </div>
+
+    <div class="main-wrapper">
+        
+        <!-- COLUNA ESQUERDA -->
+        <div class="calc-container">
+            <h2>Matérias Disponíveis</h2>
+            <p class="subtitulo">Busque e adicione matérias para sua simulação</p>
+
+            <div class="search-container">
+                <input type="text" class="search-input" id="searchInput" placeholder="Buscar matéria...">
+                <button class="search-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="lista-materias" id="listaEsquerda">
+                <!-- Inserido via JS -->
+            </div>
+        </div>
+
+        <!-- COLUNA DIREITA -->
+        <div class="calc-container">
+            <h2>Sua Simulação</h2>
+            <p class="subtitulo">Matérias selecionadas para o próximo semestre</p>
+
+            <div class="stats-header">
+                <div class="stats-row">
+                    <div class="stat-item">
+                        <span class="stat-value" id="totalCreditos">0</span>
+                        <span class="stat-label">Créditos Totais</span>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-value" id="novaIntegralizacao">42.0%</span>
+                        <span class="stat-label">Nova Integralização</span>
+                    </div>
+                </div>
+            </div>
+
+            <p style="font-size: 14px; margin-bottom: 12px; color: #ccc;">Matérias Selecionadas:</p>
+
+            <div class="lista-materias" id="listaDireita">
+                <div id="emptyState" style="text-align: center; color: #88aa99; margin-top: 40px;">
+                    Nenhuma matéria selecionada.
+                </div>
+            </div>
+
+            <button class="btn-salvar" id="btnSalvar">Salvar Simulação</button>
+        </div>
+
+    </div>
+
+    <!-- Bibliotecas JS para PDF (Necessárias) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+
+    <!-- Arquivo de Geração de PDF (NOVO) -->
+    <script src="../static/pdf.js"></script>
+
+    <!-- Lógica Principal da Calculadora -->
+    <script src="../static/logica.js"></script>
+
+</body>
+</html>

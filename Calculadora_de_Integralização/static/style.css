@@ -1,0 +1,303 @@
+/* ================= ESTILOS GERAIS ================= */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f0f0f0; 
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Título Principal da Página */
+.page-header {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #003322;
+}
+
+.page-header h1 {
+    font-size: 36px;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+}
+
+.page-header p {
+    font-size: 16px;
+    color: #555;
+    margin: 0;
+}
+
+/* Wrapper principal das colunas */
+.main-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    width: 100%;
+    max-width: 1100px;
+    justify-content: center;
+    align-items: flex-start; /* Alinha no topo */
+    flex-wrap: wrap;
+}
+
+/* ================= CARTÕES PRINCIPAIS (VERDES) ================= */
+.calc-container {
+    background: linear-gradient(180deg, #006633 0%, #003366 100%);
+    border-radius: 20px;
+    padding: 32px;
+    flex: 1;
+    min-width: 350px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    
+    /* --- ALTURA FIXA RESPONSIVA --- */
+    display: flex;
+    flex-direction: column;
+    height: 65vh; 
+    min-height: 500px; 
+    max-height: 800px;
+}
+
+.calc-container h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+    color: #FFFFFF;
+}
+
+.calc-container .subtitulo {
+    font-size: 14px;
+    font-weight: 400;
+    color: #B0D9CB;
+    margin: 0 0 24px 0;
+    flex-shrink: 0;
+}
+
+/* ================= BARRA DE PESQUISA ================= */
+.search-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 24px;
+    flex-shrink: 0;
+}
+
+.search-input {
+    box-sizing: border-box;
+    width: 100%;
+    height: 50px;
+    padding: 10px 50px 10px 20px;
+    border: none;
+    border-radius: 25px;
+    background-color: #f9f9f9;
+    font-size: 16px;
+    color: #333;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.search-input:focus {
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+}
+
+.search-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 50px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-button svg {
+    width: 20px;
+    height: 20px;
+    fill: #888;
+}
+
+/* ================= LISTA DE MATÉRIAS ================= */
+.lista-materias {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    
+    /* --- FIX PARA OCUPAR ESPAÇO E SCROLLAR --- */
+    flex: 1; 
+    overflow-y: auto; 
+    padding-right: 5px; 
+}
+
+/* Custom Scrollbar */
+.lista-materias::-webkit-scrollbar {
+    width: 6px;
+}
+.lista-materias::-webkit-scrollbar-thumb {
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 3px;
+}
+
+.materia-card {
+    background-color: #BACDDB; 
+    color: #1A202C;
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    
+    /* Animação inicial */
+    opacity: 1;
+    transform: scale(1);
+}
+
+.materia-info {
+    flex: 1;
+}
+
+.materia-codigo {
+    font-weight: 700;
+    color: #003366;
+    margin-bottom: 4px;
+}
+
+.materia-nome {
+    font-size: 14px;
+    color: #445566;
+}
+
+.tag-creditos {
+    display: inline-block;
+    background-color: rgba(0,0,0,0.1);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    margin-top: 4px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Botões de Ação */
+.action-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-left: 12px;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.btn-add {
+    background-color: #003366;
+    color: white;
+}
+
+.btn-add:hover {
+    background-color: #002244;
+    transform: scale(1.1);
+}
+
+.btn-remove {
+    background-color: rgba(200, 50, 50, 0.1); 
+    color: #cc0000;
+}
+
+.btn-remove:hover {
+    background-color: #cc0000;
+    color: white;
+    transform: scale(1.1);
+}
+
+/* ================= HEADER DA SIMULAÇÃO ================= */
+.stats-header {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 24px;
+    text-align: center;
+    flex-shrink: 0; 
+}
+
+.stats-row {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-value {
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.stat-label {
+    font-size: 12px;
+    color: #ddd;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.divider {
+    width: 1px;
+    background-color: rgba(255,255,255,0.3);
+}
+
+/* Botão Salvar */
+.btn-salvar {
+    margin-top: 20px; 
+    background-color: #00AA44;
+    color: white;
+    border: none;
+    padding: 16px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    transition: background 0.3s;
+    flex-shrink: 0;
+}
+
+.btn-salvar:hover {
+    background-color: #008833;
+}
+
+/* ================= ANIMAÇÕES ================= */
+.hidden {
+    display: none;
+}
+
+.fade-out {
+    animation: fadeOutAnimation 0.3s forwards;
+}
+
+.fade-in {
+    animation: fadeInAnimation 0.4s forwards;
+}
+
+@keyframes fadeOutAnimation {
+    from { opacity: 1; transform: scale(1); }
+    to { opacity: 0; transform: scale(0.9); }
+}
+
+@keyframes fadeInAnimation {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
